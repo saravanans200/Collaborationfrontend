@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+<script src="RouteConfig.js"></script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstarp.min.js"></script>
+
+<link rel="stylesheet" href="login.css"/>
+
+<script>
+function toggleResetPswd(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle() // display:block or none
+    $('#logreg-forms .form-reset').toggle() // display:block or none
+}
+
+function toggleSignUp(e){
+    e.preventDefault();
+    $('#logreg-forms .form-signin').toggle(); // display:block or none
+    $('#logreg-forms .form-signup').toggle(); // display:block or none
+}
+
+$(()=>{
+    // Login Register Form
+    $('#logreg-forms #forgot_pswd').click(toggleResetPswd);
+    $('#logreg-forms #cancel_reset').click(toggleResetPswd);
+    $('#logreg-forms #btn-signup').click(toggleSignUp);
+    $('#logreg-forms #cancel_signup').click(toggleSignUp);
+})
+</script>
+
+</head>
+<body ng-app="MyApp">
+
+
+<nav class="navbar navbar-expand-sm bg-light navbar-light">
+ <div class="container">
+  <div class="navbar-header">
+      <a class="navbar-brand" href="#">Team Collaboration</a>
+  </div>
+  <ul class="nav navbar-nav">
+   <li class="active"><a href="#/userHome">Home</a></li>
+   <li><a href="#/login">Login</a></li>
+   <li><a href="#/register">Register</a></li>
+   <li><a href="#/contactus">Contact Us</a></li>
+   <li><a href="#/aboutus">About Us</a></li>
+  </ul>
+ </div>
+</nav>
+
+
+
+<div ng-view></div>
+
+</body>
+</html>
